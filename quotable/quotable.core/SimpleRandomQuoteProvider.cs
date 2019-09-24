@@ -8,7 +8,10 @@ namespace quotable.core
     {
         public IEnumerable<string> getQuotes(long numQuotes)
         {
-            throw new NotImplementedException();
+            String[] quotes;
+            quotes = new string[3] { "Quote 1", "Quote 2", "Quote 3" };
+
+            return quotes;
         }
     }
 }

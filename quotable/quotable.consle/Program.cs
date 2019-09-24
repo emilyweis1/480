@@ -7,6 +7,7 @@ namespace quotable.consle
         static void Main(string[] args) 
         {
             Console.WriteLine("Hello World!");
+
         }
     }
 }
