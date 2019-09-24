@@ -4,7 +4,7 @@ using System.Text;
 
 namespace quotable.core
 {
-    class SimpleRandomQuoteProvider : RandomQuoteProvider
+   public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
         /// <summary>
         /// hardcoded to return the array of numQuotes size
