@@ -6,6 +6,12 @@ namespace quotable.core
 {
     interface RandomQuoteProvider
     {
+        /// <summary>
+        /// Method of type: IEnumerable<string> called getQuotes()
+        /// which takes in a long: number of quotes as a perameter
+        /// </summary>
+        /// <param name="numQuotes"></param>
+        /// <returns></returns>
         IEnumerable<string> getQuotes(long numQuotes);
     }
 }
