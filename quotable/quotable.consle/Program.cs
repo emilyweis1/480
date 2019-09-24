@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace quotable.consle
+namespace quotable.console
 {
     class Program 
     {
         static void Main(string[] args) 
         {
             Console.WriteLine("Hello World!");
-
+            
         }
     }
 }
