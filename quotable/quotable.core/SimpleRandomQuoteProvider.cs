@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace quotable.core
 {
-    public class Class1 : RandomQuoteProvider
+    class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
         public IEnumerable<string> getQuotes(long numQuotes)
         {
