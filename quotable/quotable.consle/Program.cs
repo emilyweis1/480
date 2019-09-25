@@ -6,16 +6,27 @@ namespace quotable.console
 {
     class Program 
     {
-        static void Main(string[] args) 
+        /// <summary>
+        /// Main creates an instance of SimpleRandomQuoteProvider named simple that
+        /// then creates 7 simple quotes in SimpleRandomQuoteProvider from quotable.core
+        /// 
+        /// Main then creates a DefaultRandomQuoteGenerator that prints out quotes 
+        /// from DefaultRandomQuoteGenerator in quotable.core
+        /// </summary>
+        /// <param name="args"></param>
+        static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
             SimpleRandomQuoteProvider simple = new SimpleRandomQuoteProvider();
-            //DefaultRandomQuoteGenerator defaultRand = new DefaultRandomQuoteGenerator({ "quote 1", "quote 2" });
 
-            foreach(var s in simple.getQuotes(7))
+            foreach (var s in simple.getQuotes(7))
             {
                 Console.WriteLine(s);
             }
+
+            string[] quotes = new string[4] { "one", "two", "three", "four" };
+
+            DefaultRandomQuoteGenerator defaultRand = new DefaultRandomQuoteGenerator(quotes);
         }
     }
 }

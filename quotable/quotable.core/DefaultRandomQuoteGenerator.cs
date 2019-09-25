@@ -6,14 +6,23 @@ namespace quotable.core
 {
     public class DefaultRandomQuoteGenerator : RandomQuoteProvider
     {
+        /// <summary>
+        /// this constructor takes in a string of quotes and returns those quotes 
+        /// to the console
+        /// </summary>
+        /// <param name="quotesData"></param>
         public DefaultRandomQuoteGenerator(IEnumerable<string> quotesData)
         {
-            Console.WriteLine("constructor");
+            foreach (var q in quotesData)
+            {
+                Console.WriteLine(q);
+            }
         }
 
         public IEnumerable<string> getQuotes(long numQuotes)
         {
-            throw new NotImplementedException();
+            string msg = ("get" + numQuotes + "quotes");
+            yield return msg;
         }
     }
 }
