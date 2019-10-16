@@ -6,6 +6,13 @@ namespace quotable.core
 {
    public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
+        /// <summary>
+        /// hardcoded to return the author 
+        /// takes in a value to determine author
+        /// for the quote
+        /// </summary>
+        /// <param name="numAuths"></param>
+        /// <returns></returns>
         public IEnumerable<string> getAuthor(long numAuths)
         {
 
@@ -15,6 +22,12 @@ namespace quotable.core
             yield return authors;
         }
 
+        /// <summary>
+        /// hardcoded to return the ID of the quote you pass
+        /// in as a perameter
+        /// </summary>
+        /// <param name="i"></param>
+        /// <returns></returns>
         public IEnumerable<long> getID(long i)
         {
             long ID = i;
@@ -23,7 +36,7 @@ namespace quotable.core
         }
 
         /// <summary>
-        /// hardcoded to return the array of numQuotes size
+        /// hardcoded to return the numQuotes 
         /// takes in a value to determine numQuotes
         /// for how many random quotes you want to randomly create
         /// </summary>
