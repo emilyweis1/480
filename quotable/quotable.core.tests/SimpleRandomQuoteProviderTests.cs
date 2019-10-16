@@ -21,13 +21,12 @@ namespace Tests
             // arrange
             var provider = new SimpleRandomQuoteProvider();
             long input = 5;
-            long expected = 5;
-
-            // act
-            var actual = provider.getQuotes(input);
 
             // assert
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(("Quote: " + input), provider.getQuotes(input));
+            Assert.AreEqual(input, provider.getID(input));
+            Assert.AreEqual(("Author: " + input), provider.getAuthor(input));
+
         }
     }
 }

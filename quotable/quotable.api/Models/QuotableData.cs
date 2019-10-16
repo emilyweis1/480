@@ -7,7 +7,7 @@ namespace quotable.api.Models
 {
     public class QuotableData
     {
-        public IEnumerable<string> ID { get; set; }
+        public IEnumerable<long> ID { get; set; }
         public IEnumerable<string> Quote { get; set; }
         public IEnumerable<string> Author { get; set; }
     }

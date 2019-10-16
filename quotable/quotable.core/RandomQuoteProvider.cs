@@ -13,5 +13,9 @@ namespace quotable.core
         /// <param name="numQuotes"></param>
         /// <returns></returns>
         IEnumerable<string> getQuotes(long numQuotes);
+
+        IEnumerable<long> getID(long numQuotes);
+
+        IEnumerable<string> getAuthor(long numQuotes);
     }
 }

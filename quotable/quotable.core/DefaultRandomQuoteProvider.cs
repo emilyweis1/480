@@ -19,9 +19,21 @@ namespace quotable.core
             }
         }
 
+        public IEnumerable<string> getAuthor(long numAuths)
+        {
+            string msg = ("get " + numAuths + " authors");
+            yield return msg;
+        }
+
+        public IEnumerable<long> getID(long num)
+        {
+            long ID = num;
+            yield return ID;
+        }
+
         public IEnumerable<string> getQuotes(long numQuotes)
         {
-            string msg = ("get" + numQuotes + "quotes");
+            string msg = ("get " + numQuotes + " quotes");
             yield return msg;
         }
     }
