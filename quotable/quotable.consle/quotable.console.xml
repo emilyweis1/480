@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.console</name>
+    </assembly>
+    <members>
+        <member name="M:quotable.console.Program.Main(System.String[])">
+            <summary>
+            Main creates an instance of SimpleRandomQuoteProvider named simple that
+            then creates 7 simple quotes in SimpleRandomQuoteProvider from quotable.core
+            
+            Main then creates a DefaultRandomQuoteGenerator that prints out quotes 
+            from DefaultRandomQuoteGenerator in quotable.core
+            </summary>
+            <param name="args"></param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.api</name>
+    </assembly>
+    <members>
+        <member name="T:quotable.api.Controllers.QuoteController">
+            <summary>
+            Implements controllerBase and is main controller for quotes 
+            </summary>
+        </member>
+        <member name="M:quotable.api.Controllers.QuoteController.#ctor(quotable.core.RandomQuoteProvider)">
+            <summary>
+            takes in a provider and assigns global provider variable to that provider
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:quotable.api.Controllers.QuoteController.Get">
+            <summary>
+            get call that returns a string of values
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.api.Controllers.QuoteController.Get(System.Int32)">
+            <summary>
+            gets an id, quote, and author with given id
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.api.Controllers.QuoteController.Post(System.String)">
+            <summary>
+            unimplemented method that posts given string
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:quotable.api.Controllers.QuoteController.Put(System.Int32,System.String)">
+            <summary>
+            unimplemented value that puts from id and string
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:quotable.api.Controllers.QuoteController.Delete(System.Int32)">
+            <summary>
+            unimplemented error deleting by id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:quotable.api.Controllers.RandomController">
+            <summary>
+            controller for random quote provider
+            </summary>
+        </member>
+        <member name="M:quotable.api.Controllers.RandomController.#ctor(quotable.core.RandomQuoteProvider)">
+            <summary>
+            assigns global provider to passed in provider
+            </summary>
+            <param name="provider"></param>
+        </member>
+        <member name="M:quotable.api.Controllers.RandomController.Get">
+            <summary>
+            returns array of strings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.api.Controllers.RandomController.Get(System.Int32)">
+            <summary>
+            gets id, quote and author with provided id
+            sets quotable data var
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.api.Controllers.RandomController.Post(System.String)">
+            <summary>
+            unimplemented method to post value
+            </summary>
+            <param name="value"></param>
+        </member>
+        <member name="M:quotable.api.Controllers.RandomController.Put(System.Int32,System.String)">
+            <summary>
+            unimplemented method that puts based on id and value
+            </summary>
+            <param name="id"></param>
+            <param name="value"></param>
+        </member>
+        <member name="M:quotable.api.Controllers.RandomController.Delete(System.Int32)">
+            <summary>
+            unimplemented method that delets based on id
+            </summary>
+            <param name="id"></param>
+        </member>
+        <member name="T:quotable.api.Models.QuotableData">
+            <summary>
+            Class to instantiate ID, Quote, and Author
+            </summary>
+        </member>
+        <member name="P:quotable.api.Models.QuotableData.ID">
+            <summary>
+            instnantiate ID of type long
+            </summary>
+        </member>
+        <member name="P:quotable.api.Models.QuotableData.Quote">
+            <summary>
+            instnantiate Quote of type string
+            </summary>
+        </member>
+        <member name="P:quotable.api.Models.QuotableData.Author">
+            <summary>
+            instnantiate Author of type string
+            </summary>
+        </member>
+        <member name="T:quotable.api.Program">
+            <summary>
+            Class: Program creates a web host builder
+            </summary>
+        </member>
+        <member name="M:quotable.api.Program.Main(System.String[])">
+            <summary>
+            Main: instantiates and runs the web host builder
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:quotable.api.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Takes in a string param to use as the default builder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:quotable.api.Startup">
+            <summary>
+            instantiates the startup for all of the configurations
+            </summary>
+        </member>
+        <member name="M:quotable.api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            stes global configuration to passed in config
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:quotable.api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:quotable.api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>

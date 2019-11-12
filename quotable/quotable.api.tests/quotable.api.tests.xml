@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.api.tests</name>
+    </assembly>
+    <members>
+        <member name="T:Tests.Tests">
+            <summary>
+            class to hold all tests for quoteController
+            </summary>
+        </member>
+        <member name="M:Tests.Tests.Setup">
+            <summary>
+            initialize setup for quotable/tests
+            </summary>
+        </member>
+        <member name="M:Tests.Tests.Test_Get_Success">
+            <summary>
+            test to ensure SimpleRandomQuoteProvider is returning the correct and expected value
+            </summary>
+        </member>
+    </members>
+</doc>

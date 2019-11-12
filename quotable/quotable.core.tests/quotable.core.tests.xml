@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.core.tests</name>
+    </assembly>
+    <members>
+        <member name="T:Tests.Tests">
+            <summary>
+            Class to hold all testing for quotbale
+            </summary>
+        </member>
+        <member name="M:Tests.Tests.OneTimeSetup">
+            <summary>
+            set's up quotable on startup
+            </summary>
+        </member>
+        <member name="M:Tests.Tests.Setup">
+            <summary>
+            method to setup quotable
+            </summary>
+        </member>
+        <member name="M:Tests.Tests.Test">
+            <summary>
+            Tests the providers with a set input to make sure output is as expected
+            </summary>
+        </member>
+    </members>
+</doc>

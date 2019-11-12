@@ -4,13 +4,22 @@ using quotable.core;
 
 namespace Tests
 {
+    /// <summary>
+    /// class to hold all tests for quoteController
+    /// </summary>
     public class Tests
     {
+        /// <summary>
+        /// initialize setup for quotable/tests
+        /// </summary>
         [SetUp]
         public void Setup()
         {
         }
 
+        /// <summary>
+        /// test to ensure SimpleRandomQuoteProvider is returning the correct and expected value
+        /// </summary>
         [Test]
         public void Test_Get_Success()
         {

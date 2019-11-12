@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>quotable.core</name>
+    </assembly>
+    <members>
+        <member name="T:quotable.core.DefaultRandomQuoteGenerator">
+            <summary>
+            implements random quote provider to return quotes
+            </summary>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.#ctor(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            this constructor takes in a string of quotes and returns those quotes 
+            to the console
+            </summary>
+            <param name="quotesData"></param>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.getAuthor(System.Int64)">
+            <summary>
+            this constructor takes in a long of the ID for the quote and returns 
+            the author
+            </summary>
+            <param name="numAuths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.getID(System.Int64)">
+            <summary>
+            this constructor takes in a long of the ID for the quote 
+            and returns the quote ID
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.DefaultRandomQuoteGenerator.getQuotes(System.Int64)">
+            <summary>
+            this constructor takes in a long of the ID for the quote
+            and returns the quote
+            </summary>
+            <param name="numQuotes"></param>
+            <returns></returns>
+        </member>
+        <member name="T:quotable.core.RandomQuoteProvider">
+            <summary>
+            Provider for random quotes
+            </summary>
+        </member>
+        <member name="M:quotable.core.RandomQuoteProvider.getQuotes(System.Int64)">
+            <summary>
+            Method of type: IEnumerable string called getQuotes
+            which takes in a long: number of quotes as a perameter
+            </summary>
+            <param name="numQuotes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.RandomQuoteProvider.getID(System.Int64)">
+            <summary>
+            Method of type: enum long called getID
+            which takes in a long: number of ID as a perameter
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.RandomQuoteProvider.getAuthor(System.Int64)">
+            <summary>
+            Method of type: IEnumerable string called getAuthor
+            which takes in a long: number of authors as a perameter
+            </summary>
+            <param name="numAuthors"></param>
+            <returns></returns>
+        </member>
+        <member name="T:quotable.core.SimpleRandomQuoteProvider">
+            <summary>
+            implements random quote provider and returns quote per method based on input
+            </summary>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.getAuthor(System.Int64)">
+            <summary>
+            hardcoded to return the author 
+            takes in a value to determine author
+            for the quote
+            </summary>
+            <param name="numAuths"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.getID(System.Int64)">
+            <summary>
+            hardcoded to return the ID of the quote you pass
+            in as a perameter
+            </summary>
+            <param name="i"></param>
+            <returns></returns>
+        </member>
+        <member name="M:quotable.core.SimpleRandomQuoteProvider.getQuotes(System.Int64)">
+            <summary>
+            hardcoded to return the numQuotes 
+            takes in a value to determine numQuotes
+            for how many random quotes you want to randomly create
+            </summary>
+            <param name="numQuotes"></param>
+            <returns> returns the array of numQuotes </returns>
+        </member>
+    </members>
+</doc>

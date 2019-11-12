@@ -4,6 +4,9 @@ using System.Text;
 
 namespace quotable.core
 {
+    /// <summary>
+    /// implements random quote provider and returns quote per method based on input
+    /// </summary>
    public class SimpleRandomQuoteProvider : RandomQuoteProvider
     {
         /// <summary>
