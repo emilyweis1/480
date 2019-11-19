@@ -14,7 +14,7 @@ namespace quotable.smple.client
         //
         // example data
         // 
-        // {"number":5,"hailstoneNumber":5,"sequence":[]}
+        // {"number":5,"quotableNumber":5,"sequence":[]}
         //
 
         private static async Task Main(string[] args)

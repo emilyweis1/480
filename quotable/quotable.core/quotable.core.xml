@@ -4,6 +4,19 @@
         <name>quotable.core</name>
     </assembly>
     <members>
+        <member name="T:quotable.core.DatabaseRandomQuoteProvider">
+            <summary>
+            implements random quote provider to return quotes
+            </summary>
+        </member>
+        <member name="M:quotable.core.DatabaseRandomQuoteProvider.getID(System.Int64)">
+            <summary>
+            this constructor takes in a long of the ID for the quote 
+            and returns the quote ID
+            </summary>
+            <param name="num"></param>
+            <returns></returns>
+        </member>
         <member name="T:quotable.core.DefaultRandomQuoteGenerator">
             <summary>
             implements random quote provider to return quotes
