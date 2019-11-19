@@ -34,6 +34,18 @@ namespace quotable.api
         /// <param name="services"></param>
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // create the datacontext to be used by the database-backed Quotable number generator
+            // - the name of the database file is in the connection string
+            services.AddDbContext<QuotableDbContext>(options => options.UseSqlite(@"Data Source=quotable.db;"));
+
+            // the controller is expecting to be provided an instance of QuotableNumberGenerator
+            //services.AddSingleton<QuotableNumberGenerator, NaiveQuotableNumberGenerator>();
+            // services.AddSingleton<QuotableeNumberGenerator, DatabaseQuotableNumberGenerator>();
+            services.AddScoped<QuotableNumberGenerator, DatabaseQuotableNumberGenerator>();
+
+            services.AddHttpContextAccessor();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
