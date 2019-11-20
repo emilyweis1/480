@@ -5,25 +5,25 @@ using System.Text;
 namespace quotable.core
 {
     /// <summary>
-    /// Represents the many-to-many relation between documents and authors
+    /// Represents the many-to-many relation between quotes and authors
     /// </summary>
-    public class DocumentAuthor
+    public class QuoteAuthor
     {
         /// <summary>
-        /// The ID of the document related to the author.
+        /// The ID of the Quote related to the author.
         /// </summary>
-        public long DocumentId { get; set; }
+        public long QuoteId { get; set; }
         /// <summary>
-        /// The document related to the author.
+        /// The Quote related to the author.
         /// </summary>
-        public Document Document { get; set; }
+        public Quote Quote { get; set; }
 
         /// <summary>
-        /// The ID of the author related to the document.
+        /// The ID of the author related to the Quote.
         /// </summary>
         public long AuthorId { get; set; }
         /// <summary>
-        /// The author related to the document.
+        /// The author related to the Quote.
         /// </summary>
         public Author Author { get; set; }
     }

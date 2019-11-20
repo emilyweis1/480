@@ -91,6 +91,45 @@
             </summary>
             <param name="id"></param>
         </member>
+        <member name="T:quotable.api.Controllers.QuotesController">
+            <summary>
+            API controller for the '/quotes' resource.
+            </summary>
+        </member>
+        <member name="M:quotable.api.Controllers.QuotesController.#ctor(quotable.core.QuotableContext)">
+            <summary>
+            Constructor
+            </summary>
+            <param name="context">The database context to data access.</param>
+        </member>
+        <member name="M:quotable.api.Controllers.QuotesController.Get">
+            <summary>
+            Returns all the quotes.
+            </summary>
+            <returns>All the quotes.</returns>
+        </member>
+        <member name="M:quotable.api.Controllers.QuotesController.Get(System.Int64)">
+            <summary>
+            Gets a specific quote.
+            </summary>
+            <param name="id">The id of the quote to get.</param>
+            <returns>The quote.</returns>
+        </member>
+        <member name="T:quotable.api.Models.Author">
+            <summary>
+            Model for an author
+            </summary>
+        </member>
+        <member name="P:quotable.api.Models.Author.FirstName">
+            <summary>
+            The first name of the author
+            </summary>
+        </member>
+        <member name="P:quotable.api.Models.Author.LastName">
+            <summary>
+            The last name of the author
+            </summary>
+        </member>
         <member name="T:quotable.api.Models.QuotableData">
             <summary>
             Class to instantiate ID, Quote, and Author
@@ -111,6 +150,16 @@
             instnantiate Author of type string
             </summary>
         </member>
+        <member name="T:quotable.api.Models.Quote">
+            <summary>
+            Model for a quote
+            </summary>
+        </member>
+        <member name="P:quotable.api.Models.Quote.Body">
+            <summary>
+            The title of the quote
+            </summary>
+        </member>
         <member name="T:quotable.api.Program">
             <summary>
             Class: Program creates a web host builder
@@ -124,7 +173,7 @@
         </member>
         <member name="M:quotable.api.Program.CreateWebHostBuilder(System.String[])">
             <summary>
-            Takes in a string param to use as the default builder
+            second webhost builder
             </summary>
             <param name="args"></param>
             <returns></returns>
@@ -142,16 +191,16 @@
         </member>
         <member name="M:quotable.api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
             <summary>
-            This method gets called by the runtime. Use this method to add services to the container.
+            Configure the services for the application.
             </summary>
-            <param name="services"></param>
+            <param name="services">The collection of service.</param>
         </member>
         <member name="M:quotable.api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
             <summary>
             This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
             </summary>
-            <param name="app"></param>
-            <param name="env"></param>
+            <param name="app">The application builder</param>
+            <param name="env">The hosting environment</param>
         </member>
     </members>
 </doc>

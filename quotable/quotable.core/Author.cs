@@ -5,7 +5,7 @@ using System.Text;
 namespace quotable.core
 {
     /// <summary>
-	/// The author of a document.
+	/// The author of a quote.
 	/// </summary>
 	public sealed class Author
     {
@@ -25,8 +25,8 @@ namespace quotable.core
         public string LastName { get; set; }
 
         /// <summary>
-        /// The relation of document to author
+        /// The relation of quote to author
         /// </summary>
-        public ICollection<DocumentAuthor> DocumentAuthor { get; set; }
+        public ICollection<QuoteAuthor> QuoteAuthor { get; set; }
     }
 }

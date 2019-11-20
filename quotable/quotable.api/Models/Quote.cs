@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 namespace quotable.api.Models
 {
     /// <summary>
-    /// Model for a document
+    /// Model for a quote
     /// </summary>
-    public class Document
+    public class Quote
     {
         /// <summary>
-        /// The title of the document
+        /// The title of the quote
         /// </summary>
-        public string Title { get; set; }
+        public string Body { get; set; }
     }
 }

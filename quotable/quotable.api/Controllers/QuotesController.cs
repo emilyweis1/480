@@ -4,17 +4,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using quotable.core;
 using Microsoft.AspNetCore.Mvc;
-using Document = quotable.api.Models.Document;
+using Quote = quotable.api.Models.Quote;
 
 
 namespace quotable.api.Controllers
 {
     /// <summary>
-    /// API controller for the '/documents' resource.
+    /// API controller for the '/quotes' resource.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
-    public class DocumentsController : ControllerBase
+    public class QuotesController : ControllerBase
     {
         private readonly QuotableContext _context;
 
@@ -22,45 +22,45 @@ namespace quotable.api.Controllers
         /// Constructor
         /// </summary>
         /// <param name="context">The database context to data access.</param>
-        public DocumentsController(QuotableContext context)
+        public QuotesController(QuotableContext context)
         {
             _context = context;
         }
 
         // GET api/values
         /// <summary>
-        /// Returns all the documents.
+        /// Returns all the quotes.
         /// </summary>
-        /// <returns>All the documents.</returns>
+        /// <returns>All the quotes.</returns>
         [HttpGet]
-        public IEnumerable<Document> Get()
+        public IEnumerable<Quote> Get()
         {
-            return from document in _context.Documents
-                   select new Document()
+            return from quote in _context.Quotes
+                   select new Quote()
                    {
-                       Title = document.Title
+                       Body = quote.Body
                    };
         }
 
         // GET api/values/5
         /// <summary>
-        /// Gets a specific document.
+        /// Gets a specific quote.
         /// </summary>
-        /// <param name="id">The id of the document to get.</param>
-        /// <returns>The document.</returns>
+        /// <param name="id">The id of the quote to get.</param>
+        /// <returns>The quote.</returns>
         [HttpGet("{id}")]
-        public ActionResult<Document> Get(long id)
+        public ActionResult<Quote> Get(long id)
         {
-            var document = _context.Documents.SingleOrDefault(d => d.Id == id);
+            var quote = _context.Quotes.SingleOrDefault(d => d.Id == id);
 
-            if (document == null)
+            if (quote == null)
             {
                 return NotFound();
             }
 
-            return new Document()
+            return new Quote()
             {
-                Title = document.Title
+                Body = quote.Body
             };
         }
     }

@@ -89,22 +89,22 @@ namespace quotable.api
                 LastName = "Tuvok"
             };
 
-            var document1 = new Document();
-            document1.Title = "Green Eggs and Ham";
+            var quote1 = new Quote();
+            quote1.Body = "quote one body";
 
-            var document2 = new Document();
-            document2.Title = "Vulcan, A Primer";
+            var quote2 = new Quote();
+            quote2.Body = "quote two body";
 
-            var document3 = new Document();
-            document3.Title = "Green Eggs and Vulcans";
+            var quote3 = new Quote();
+            quote3.Body = "quote three body";
 
-            var da1 = new DocumentAuthor() { Document = document1, Author = author1 };
-            var da2 = new DocumentAuthor() { Document = document2, Author = author2 };
-            var da3 = new DocumentAuthor() { Document = document3, Author = author1 };
-            var da4 = new DocumentAuthor() { Document = document3, Author = author2 };
-            var da5 = new DocumentAuthor() { Document = document3, Author = author3 };
+            var qa1 = new QuoteAuthor() { Quote = quote1, Author = author1 };
+            var qa2 = new QuoteAuthor() { Quote = quote2, Author = author2 };
+            var qa3 = new QuoteAuthor() { Quote = quote3, Author = author1 };
+            var qa4 = new QuoteAuthor() { Quote = quote3, Author = author2 };
+            var qa5 = new QuoteAuthor() { Quote = quote3, Author = author3 };
 
-            context.AddRange(da1, da2, da3, da4, da5);
+            context.AddRange(qa1, qa2, qa3, qa4, qa5);
 
             context.SaveChanges();
         }

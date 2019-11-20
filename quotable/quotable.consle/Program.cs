@@ -32,9 +32,9 @@ namespace quotable.console
                 Console.WriteLine(s);
             }
 
-            string[] quotes = new string[4] { "one", "two", "three", "four" };
+            string[] quo = new string[4] { "one", "two", "three", "four" };
 
-            DefaultRandomQuoteGenerator defaultRand = new DefaultRandomQuoteGenerator(quotes);
+            DefaultRandomQuoteGenerator defaultRand = new DefaultRandomQuoteGenerator(quo);
 
             // [miko]
             // even in a plain console application, we can use the dependency injection functionality
@@ -42,7 +42,7 @@ namespace quotable.console
             var container = new ServiceCollection();
 
             // setup to use a sqlite database
-            container.AddDbContext<QuotableContext>(options => options.UseSqlite("Data Source=lorem.db"), ServiceLifetime.Transient);
+            container.AddDbContext<QuotableContext>(options => options.UseSqlite("Data Source=quote.db"), ServiceLifetime.Transient);
             // [miko]
             // getting a context that has already been disposed.
             // yup.
@@ -73,20 +73,20 @@ namespace quotable.console
 
             using (var context = provider.GetService<QuotableContext>())
             {
-                var documents = context.Documents
-                                        .Include(d => d.DocumentAuthor)
+                var quotes = context.Quotes
+                                        .Include(d => d.QuoteAuthor)
                                         .ThenInclude(x => x.Author);
 
-                foreach (var document in documents)
+                foreach (var quote in quotes)
                 {
-                    Console.WriteLine($"document.id = {document.Id}");
-                    Console.WriteLine($"document.title = {document.Title}");
+                    Console.WriteLine($"quote.id = {quote.Id}");
+                    Console.WriteLine($"quote.title = {quote.Body}");
 
-                    foreach (var author in document.Authors)
+                    foreach (var author in quote.Authors)
                     {
-                        Console.WriteLine($"document.author.id = {author.Id}");
-                        Console.WriteLine($"document.author.firstname = {author.FirstName}");
-                        Console.WriteLine($"document.author.firstname = {author.LastName}");
+                        Console.WriteLine($"quote.author.id = {author.Id}");
+                        Console.WriteLine($"quote.author.firstname = {author.FirstName}");
+                        Console.WriteLine($"quote.author.firstname = {author.LastName}");
                     }
 
                     Console.WriteLine();
@@ -114,22 +114,22 @@ namespace quotable.console
                 LastName = "Tuvok"
             };
 
-            var document1 = new Document();
-            document1.Title = "Green Eggs and Ham";
+            var quote1 = new Quote();
+            quote1.Body = "quote one body";
 
-            var document2 = new Document();
-            document2.Title = "Vulcan, A Primer";
+            var quote2 = new Quote();
+            quote2.Body = "quote 2 body";
 
-            var document3 = new Document();
-            document3.Title = "Green Eggs and Vulcans";
+            var quote3 = new Quote();
+            quote3.Body = "quote 3 body";
 
-            var da1 = new DocumentAuthor() { Document = document1, Author = author1 };
-            var da2 = new DocumentAuthor() { Document = document2, Author = author2 };
-            var da3 = new DocumentAuthor() { Document = document3, Author = author1 };
-            var da4 = new DocumentAuthor() { Document = document3, Author = author2 };
-            var da5 = new DocumentAuthor() { Document = document3, Author = author3 };
+            var qa1 = new QuoteAuthor() { Quote = quote1, Author = author1 };
+            var qa2 = new QuoteAuthor() { Quote = quote2, Author = author2 };
+            var qa3 = new QuoteAuthor() { Quote = quote3, Author = author1 };
+            var qa4 = new QuoteAuthor() { Quote = quote3, Author = author2 };
+            var qa5 = new QuoteAuthor() { Quote = quote3, Author = author3 };
 
-            context.AddRange(da1, da2, da3, da4, da5);
+            context.AddRange(qa1, qa2, qa3, qa4, qa5);
 
             await context.SaveChangesAsync();
         }
