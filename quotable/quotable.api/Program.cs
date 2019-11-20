@@ -26,31 +26,11 @@ namespace quotable.api
         }
 
         /// <summary>
-        /// Takes in a string param to use as the default builder
-        /// </summary>
-        /// <param name="args"></param>
-        /// <returns></returns>
-        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
-        {
-            return WebHost
-                        .CreateDefaultBuilder(args)
-                        .ConfigureLogging(logBuilder =>
-                        {
-                            logBuilder.ClearProviders(); // removes all providers from LoggerFactory
-                            logBuilder.AddConsole();
-                            logBuilder.AddTraceSource("Information, Trace"); // Add Trace listener provider
-                            logBuilder.SetMinimumLevel(LogLevel.Trace);
-                            //logBuilder.AddTraceSource("Information, ActivityTracing"); // Add Trace listener provider
-                        })
-                        .UseStartup<Startup>();
-        }
-
-        /// <summary>
         /// second webhost builder
         /// </summary>
         /// <param name="args"></param>
         /// <returns></returns>
-        public static IWebHostBuilder CreateWebHostBuilder2(string[] args)
+        public static IWebHostBuilder CreateWebHostBuilder(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
                 .UseStartup<Startup>();
