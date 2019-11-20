@@ -5,55 +5,84 @@ using System.Threading.Tasks;
 using quotable.api.Models;
 using quotable.core;
 using Microsoft.AspNetCore.Mvc;
-
+using Quote = quotable.api.Models.Quote;
 
 namespace quotable.api.Controllers
 {
     /// <summary>
-    /// Implements controllerBase and is main controller for quotes 
+    /// API controller for the '/quotes' resource.
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class QuoteController : ControllerBase
     {
         private RandomQuoteProvider Provider { get; }
+        private readonly QuotableContext _context;
 
         /// <summary>
         /// takes in a provider and assigns global provider variable to that provider
         /// </summary>
         /// <param name="provider"></param>
-        public QuoteController(RandomQuoteProvider provider)
+        /// <param name="context"></param>
+        public QuoteController(RandomQuoteProvider provider, QuotableContext context)
         {
             Provider = provider;
+            _context = context;
         }
 
-        /// <summary>
-        /// get call that returns a string of values
-        /// </summary>
-        /// <returns></returns>
         // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
-            return new string[] { "value1", "value2" };
-        }
-
         /// <summary>
-        /// gets an id, quote, and author with given id
+        /// Returns all the quotes.
         /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<QuotableData> Get(int id)
+        /// <returns>All the quotes.</returns>
+        [HttpGet]
+        public IEnumerable<Quote> Get()
         {
-            var data = new QuotableData();
-            data.ID = Provider.getID(id);
-            data.Quote = Provider.getQuotes(id);
-            data.Author = Provider.getAuthor(id);
-
-            return data;
+            return from quote in _context.Quotes
+                   select new Quote()
+                   {
+                       Body = quote.Body
+                   };
         }
+
+        //[HttpGet]
+        //public ActionResult<IEnumerable<string>> Get()
+        //{
+        //    return new string[] { "value1", "value2" };
+        //}
+
+        // GET api/values/5
+        /// <summary>
+        /// Gets a specific quote.
+        /// </summary>
+        /// <param name="id">The id of the quote to get.</param>
+        /// <returns>The quote.</returns>
+        [HttpGet("{id}")]
+        public ActionResult<Quote> Get(long id)
+        {
+            var quote = _context.Quotes.SingleOrDefault(d => d.Id == id);
+
+            if (quote == null)
+            {
+                return NotFound();
+            }
+
+            return new Quote()
+            {
+                Body = quote.Body
+            };
+        }
+
+        //[HttpGet("{id}")]
+        //public ActionResult<QuotableData> Get(int id)
+        //{
+        //    var data = new QuotableData();
+        //    data.ID = Provider.getID(id);
+        //    data.Quote = Provider.getQuotes(id);
+        //    data.Author = Provider.getAuthor(id);
+
+        //    return data;
+        //}
 
         /// <summary>
         /// unimplemented method that posts given string
@@ -86,6 +115,7 @@ namespace quotable.api.Controllers
         {
         }
     }
+
 
     /// <summary>
     /// controller for random quote provider
